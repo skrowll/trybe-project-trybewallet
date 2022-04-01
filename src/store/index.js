@@ -1,9 +1,9 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import user from '../reducers/user';
+import rootReducer from '../reducers';
 
 const store = createStore(
-  user,
+  rootReducer,
   composeWithDevTools(),
 );
 
