@@ -10,9 +10,10 @@ class Wallet extends React.Component {
   async componentDidMount() {
     const { addNewCurrencies } = this.props;
     const result = await currenciesAPI();
+    // console.log(result);
     const resultKeys = Object.keys(result);
+    // console.log(resultKeys);
     const filterOffUSDT = resultKeys.filter((keys) => keys !== 'USDT');
-    // addCurrencies(filterOffUSDT);
     // console.log(filterOffUSDT);
     addNewCurrencies(filterOffUSDT);
   }
@@ -21,7 +22,6 @@ class Wallet extends React.Component {
     return (
       <div>
         <Header />
-        TrybeWallet
         <Form />
       </div>
     );
@@ -29,8 +29,6 @@ class Wallet extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  // addNewCurrencies: (moedas) => dispatch({ type: 'ADD_CURRENCIES' }),
-  // addNewCurrencies: (moedas) => console.log(moedas),
   addNewCurrencies: (currencies) => dispatch(addCurrencies(currencies)),
 });
 
