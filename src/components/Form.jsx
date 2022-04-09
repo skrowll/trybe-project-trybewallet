@@ -37,7 +37,7 @@ class Form extends React.Component {
       exchangeRates: currencies,
     });
     addNewExpense(this.state);
-    console.log(this.state);
+    // console.log(this.state);
     this.setState({
       value: '0',
       description: '',
